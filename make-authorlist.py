@@ -29,12 +29,12 @@ institutes = {
     'torino': r'INAF-Astrophysical Observatory of Torino, Department of Physics, University  of  Torino and  INFN-Torino,  10125  Torino,  Italy', 
     'ucsd': r'Department of Physics, University of California San Diego, La Jolla, CA 92093, USA', 
     'wis': r'Department of Particle Physics and Astrophysics, Weizmann Institute of Science, Rehovot 7610001, Israel', 
-    'zurich': r'Physik-Institut, University of Zurich, 8057  Zurich, Switzerland', 
+    'zurich': r'Physik-Institut, University of Z\"urich, 8057  Z\"urich, Switzerland', 
     'paris': r"LPNHE, Sorbonne Universit\'{e}, Universit\'{e} de Paris, CNRS/IN2P3, Paris, France", 
     'freiburg': r'Physikalisches Institut, Universit\"at Freiburg, 79104 Freiburg, Germany',
     'lal': r"Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France", 
     'napels': r"Department of Physics ``Ettore Pancini'', University of Napoli and INFN-Napoli, 80126 Napoli, Italy", 
-    'nagoya': r'Kobayashi-Maskawa Institute for the Origin of Particles and the Universe, Nagoya University, Furo-cho, Chikusa-ku, Nagoya, Aichi 464-8602, Japan', 
+    'nagoya': r'Kobayashi-Maskawa Institute for the Origin of Particles and the Universe, and Institute for Space-Earth Environmental Research, Nagoya University, Furo-cho, Chikusa-ku, Nagoya, Aichi 464-8602, Japan', 
     'laquila': r"Department of Physics and Chemistry, University of L'Aquila, 67100 L'Aquila, Italy", 
     'tokyo': r'Kamioka Observatory, Institute for Cosmic Ray Research, and Kavli Institute for the Physics and Mathematics of the Universe (WPI), the University of Tokyo, Higashi-Mozumi, Kamioka, Hida, Gifu 506-1205, Japan', 
     'kobe': r'Department of Physics, Kobe University, Kobe, Hyogo 657-8501, Japan',
@@ -42,8 +42,9 @@ institutes = {
     'alsoatferrara': r'INFN, Sez. di Ferrara and Dip. di Fisica e Scienze della Terra, Universit\`a di Ferrara, via G. Saragat 1, Edificio C, I-44122 Ferrara (FE), Italy', 
     'alsoatsuny': r'Simons Center for Geometry and Physics and C. N. Yang Institute for Theoretical Physics, SUNY, Stony Brook, NY, USA', 
     'alsoatutrecht': r'Institute for Subatomic Physics, Utrecht University, Utrecht, Netherlands', 
-    'alsoatspacenagoya': r'Institute for Space-Earth Environmental Research, Nagoya University, Nagoya, Aichi 464-8601, Japan', 
-    'alsoatcoimbrapoli': r'Coimbra Polytechnic - ISEC, Coimbra, Portugal'
+#    'alsoatspacenagoya': r'Institute for Space-Earth Environmental Research, Nagoya University, Nagoya, Aichi 464-8601, Japan', 
+    'alsoatcoimbrapoli': r'Coimbra Polytechnic - ISEC, Coimbra, Portugal',
+    'alsoatiarnagoya': r'Institute for Advanced Research, Nagoya University, Nagoya, Aichi 464-8601, Japan'
     }
 
 def print_header():
@@ -255,7 +256,20 @@ def format_jcap(list):
 \end{document}
 ''')
 
-
+def format_arxiv(list):
+    '''Format for arXiv - during submission'''
+    output = ""
+    first = True
+    for author in list:
+        auth = author['name']
+        auth = auth.replace('~', ' ')
+        if first:
+            output = auth
+            first = False
+        else:
+            output = output + ', ' + auth
+    print(output)
+        
 def read_authorlist(filename):
     ''' Read the XENON author list in the format: author: affil1, affil2 % comment'''
 
@@ -292,12 +306,13 @@ def read_authorlist(filename):
     return list
 
 def usage():
-    print("make-authorlist.py --prl | --epjc | --jcap filename")
+    print("make-authorlist.py --prl | --epjc | --jcap | --arxiv filename")
     sys.exit(0)
     
 options = { "--prl": format_prl,
             "--epjc": format_epjc,
             "--jcap": format_jcap,
+            "--arxiv": format_arxiv,
             "--help": usage }
 
 
