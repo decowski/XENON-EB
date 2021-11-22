@@ -20,9 +20,9 @@ institutes = {
     'heidelberg': r'Max-Planck-Institut f\"ur Kernphysik, 69117 Heidelberg, Germany', 
     'munster': r'Institut f\"ur Kernphysik, Westf\"alische Wilhelms-Universit\"at M\"unster, 48149 M\"unster, Germany', 
     'nikhef': r'Nikhef and the University of Amsterdam, Science Park, 1098XG Amsterdam, Netherlands', 
-    'nyuad': r'New York University Abu Dhabi, Abu Dhabi, United Arab Emirates', 
+    'nyuad': r'New York University Abu Dhabi - Center for Astro, Particle and Planetary Physics, Abu Dhabi, United Arab Emirates',
     'purdue': r'Department of Physics and Astronomy, Purdue University, West Lafayette, IN 47907, USA', 
-    'rpi': r'Department of Physics, Applied Physics and Astronomy, Rensselaer Polytechnic Institute, Troy, NY 12180, USA', 
+#    'rpi': r'Department of Physics, Applied Physics and Astronomy, Rensselaer Polytechnic Institute, Troy, NY 12180, USA', 
     'rice': r'Department of Physics and Astronomy, Rice University, Houston, TX 77005, USA', 
     'stockholm': r'Oskar Klein Centre, Department of Physics, Stockholm University, AlbaNova, Stockholm SE-10691, Sweden', 
     'subatech': r"SUBATECH, IMT Atlantique, CNRS/IN2P3, Universit\'e de Nantes, Nantes 44307, France", 
@@ -30,20 +30,23 @@ institutes = {
     'ucsd': r'Department of Physics, University of California San Diego, La Jolla, CA 92093, USA', 
     'wis': r'Department of Particle Physics and Astrophysics, Weizmann Institute of Science, Rehovot 7610001, Israel', 
     'zurich': r'Physik-Institut, University of Z\"urich, 8057  Z\"urich, Switzerland', 
-    'paris': r"LPNHE, Sorbonne Universit\'{e}, Universit\'{e} de Paris, CNRS/IN2P3, Paris, France", 
+    'paris': r"LPNHE, Sorbonne Universit\'{e}, Universit\'{e} de Paris, CNRS/IN2P3, 75005 Paris, France", 
     'freiburg': r'Physikalisches Institut, Universit\"at Freiburg, 79104 Freiburg, Germany',
-    'lal': r"Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France", 
+#    'lal': r"Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France", 
     'napels': r"Department of Physics ``Ettore Pancini'', University of Napoli and INFN-Napoli, 80126 Napoli, Italy", 
     'nagoya': r'Kobayashi-Maskawa Institute for the Origin of Particles and the Universe, and Institute for Space-Earth Environmental Research, Nagoya University, Furo-cho, Chikusa-ku, Nagoya, Aichi 464-8602, Japan', 
     'laquila': r"Department of Physics and Chemistry, University of L'Aquila, 67100 L'Aquila, Italy", 
-    'tokyo': r'Kamioka Observatory, Institute for Cosmic Ray Research, and Kavli Institute for the Physics and Mathematics of the Universe (WPI), the University of Tokyo, Higashi-Mozumi, Kamioka, Hida, Gifu 506-1205, Japan', 
+    'tokyo': r'Kamioka Observatory, Institute for Cosmic Ray Research, and Kavli Institute for the Physics and Mathematics of the Universe (WPI), University of Tokyo, Higashi-Mozumi, Kamioka, Hida, Gifu 506-1205, Japan', 
     'kobe': r'Department of Physics, Kobe University, Kobe, Hyogo 657-8501, Japan',
-    'ucla': r'Physics \& Astronomy Department, University of California, Los Angeles, CA 90095, USA', 
+    'ucla': r'Physics \& Astronomy Department, University of California, Los Angeles, CA 90095, USA',
+#    'kit': r'Institute for Nuclear Physics, Karlsruhe Institute of Technology, 76021 Karlsruhe, Germany',
+    'kit': r'Institute for Astroparticle Physics, Karlsruhe Institute of Technology, 76021 Karlsruhe, Germany',
+    'tsinghua': r'Department of Physics \& Center for High Energy Physics, Tsinghua University, Beijing 100084, China', 
     'alsoatferrara': r'INFN, Sez. di Ferrara and Dip. di Fisica e Scienze della Terra, Universit\`a di Ferrara, via G. Saragat 1, Edificio C, I-44122 Ferrara (FE), Italy', 
-    'alsoatsuny': r'Simons Center for Geometry and Physics and C. N. Yang Institute for Theoretical Physics, SUNY, Stony Brook, NY, USA', 
+#    'alsoatsuny': r'Simons Center for Geometry and Physics and C. N. Yang Institute for Theoretical Physics, SUNY, Stony Brook, NY, USA', 
     'alsoatutrecht': r'Institute for Subatomic Physics, Utrecht University, Utrecht, Netherlands', 
 #    'alsoatspacenagoya': r'Institute for Space-Earth Environmental Research, Nagoya University, Nagoya, Aichi 464-8601, Japan', 
-    'alsoatcoimbrapoli': r'Coimbra Polytechnic - ISEC, Coimbra, Portugal',
+    'alsoatcoimbrapoli': r'Coimbra Polytechnic - ISEC, 3030-199 Coimbra, Portugal',
     'alsoatiarnagoya': r'Institute for Advanced Research, Nagoya University, Nagoya, Aichi 464-8601, Japan'
     }
 
@@ -92,13 +95,6 @@ def format_prl(list):
 \begin{abstract}
 \end{abstract}
 
-\pacs{
-    95.35.+d, %Dark matter
-    14.80.Ly, %Supersymmetric partners of known particles
-    29.40.-n,  %Radiation detectors
-    95.55.Vj
-}
-
 \keywords{Dark Matter, Direct Detection, Xenon}
 
 % <--- SNIP 
@@ -122,7 +118,7 @@ def format_epjc(list):
 \begin{document}
 
 % CHANGE TO TITLE
-\title{XENON Authors \\currfilename}
+\title{XENON Authors \currfilename}
 ''')
 
     addr_label = {}
@@ -256,6 +252,84 @@ def format_jcap(list):
 \end{document}
 ''')
 
+
+def format_ptep(list):
+    '''Format for PTEP '''
+    print_header()
+    print(r'''
+% NOTE: there is a nasty bug in the PTEP style file! You need to replace the 
+% newlogo.eps file with an essentially empty newlogo.png. If you don't the
+% formatting of the authorlist becomes crooked. 
+%
+% -> SNIP
+\documentclass{ptephy_v1}
+\usepackage{currfile} % To be able to list current file name in title
+% <- SNIP
+''')
+    print(r'''
+\begin{document}
+
+% CHANGE TO TITLE
+\title{XENON Authors \currfilename}
+''')
+
+    inst_label = {}
+    inst_label_ordered = []
+    also_label = {}
+    indx = 1
+    indx_also = 1
+    first_auth = True
+    auth = ''
+    post = ''
+    for author in list:
+        if not first_auth:
+            auth = auth + post + '}'
+            print(auth)
+        auth = r'\author['
+        first_inst = True
+        for inst in author['institute']:
+            if not first_inst:
+                auth = auth + ','
+            if not inst in inst_label:
+                label = str(indx)
+                inst_label[inst] = label
+                inst_label_ordered.append(inst) # Order according to use in list
+                indx = indx + 1
+            auth = auth + inst_label[inst]
+            first_inst = False
+            post = ''
+        if author['alsoat']:
+            post = r'\thanks{Also at ' + institutes[author['alsoat']] + '}'
+            indx_also = indx_also + 1
+        else:
+            post = ''
+        auth = auth + r']{' + author['name']
+        first_auth = False
+    # Last author is special because list ends with a period and not comma
+    auth = auth + post + '}'
+    print(auth)
+
+    # Make the affiliations
+    for inst in inst_label_ordered:
+        affil = r'\affil[' + inst_label[inst] + ']{' + institutes[inst] + '}'
+        print(affil)
+
+    print(r'''
+\collaborator{XENON Collaboration\email{xenon@lngs.infn.it}}
+
+\date{\today} 
+
+% CHANGE
+\begin{abstract}
+\end{abstract}
+
+% <--- SNIP 
+\maketitle
+
+\end{document}
+''')
+
+
 def format_arxiv(list):
     '''Format for arXiv - during submission'''
     output = ""
@@ -306,12 +380,13 @@ def read_authorlist(filename):
     return list
 
 def usage():
-    print("make-authorlist.py --prl | --epjc | --jcap | --arxiv filename")
+    print("make-authorlist.py --prl | --epjc | --jcap | --ptep | --arxiv filename")
     sys.exit(0)
     
 options = { "--prl": format_prl,
             "--epjc": format_epjc,
             "--jcap": format_jcap,
+            "--ptep": format_ptep,
             "--arxiv": format_arxiv,
             "--help": usage }
 
