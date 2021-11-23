@@ -1,7 +1,16 @@
 # XENON-EB
 XENON Editorial Board files
 
-make-authorlist.py takes an author file in the following format:<br>
+The make-authorlist.py takes an author file in a simple format and converts it to a LaTeX-formatted authorlist according to a style file of the following journals:
+ * PRx
+ * EPJC
+ * JCAP
+ * PTEP
+ * arXiv
+
+The style files are: revtex4, svjour3, jcappub, ptephy_v1. 
+
+The author list should be in the following format:<br>
 
 \# NAME: INST1,INST2,ALSOAT    % COMMENT<br>
 \#<br>
@@ -11,5 +20,4 @@ M.~P.~Decowski: nikhef<br>
 S.~Random: heidelberg,wis,alsoatspacenagoya	% left May 2020 random@github.com<br>
 <br>
 <br>
-and converts it to a Latex authorlist that can be processed by the Phys. Rev., EPJC and JCAP
-Latex styles in revtex4, svjour3 and jcappub style files. 
+
