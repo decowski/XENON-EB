@@ -1,7 +1,7 @@
 # XENON-EB
 XENON Editorial Board files
 
-The make-authorlist.py takes an author file in a simple format and converts it to a LaTeX-formatted authorlist according to a style file of the following journals:
+The make-authorlist.py script takes an author file in a simple format and converts it to a LaTeX-formatted authorlist according to a style file of the following journals:
  * PRx
  * EPJC
  * JCAP
