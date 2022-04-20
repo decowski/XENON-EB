@@ -16,7 +16,7 @@ institutes = {
     'coimbra': r'LIBPhys, Department of Physics, University of Coimbra, 3004-516 Coimbra, Portugal', 
     'columbia': r'Physics Department, Columbia University, New York, NY 10027, USA', 
     'lngs': r"INFN-Laboratori Nazionali del Gran Sasso and Gran Sasso Science Institute, 67100 L'Aquila, Italy", 
-    'mainz': r'Institut f\"ur Physik \& Exzellenzcluster PRISMA, Johannes Gutenberg-Universit\"at Mainz, 55099 Mainz, Germany', 
+    'mainz': r'Institut f\"ur Physik \& Exzellenzcluster PRISMA$^{+}$, Johannes Gutenberg-Universit\"at Mainz, 55099 Mainz, Germany', 
     'heidelberg': r'Max-Planck-Institut f\"ur Kernphysik, 69117 Heidelberg, Germany', 
     'munster': r'Institut f\"ur Kernphysik, Westf\"alische Wilhelms-Universit\"at M\"unster, 48149 M\"unster, Germany', 
     'nikhef': r'Nikhef and the University of Amsterdam, Science Park, 1098XG Amsterdam, Netherlands', 
@@ -30,7 +30,7 @@ institutes = {
     'ucsd': r'Department of Physics, University of California San Diego, La Jolla, CA 92093, USA', 
     'wis': r'Department of Particle Physics and Astrophysics, Weizmann Institute of Science, Rehovot 7610001, Israel', 
     'zurich': r'Physik-Institut, University of Z\"urich, 8057  Z\"urich, Switzerland', 
-    'paris': r"LPNHE, Sorbonne Universit\'{e}, Universit\'{e} de Paris, CNRS/IN2P3, 75005 Paris, France", 
+    'paris': r"LPNHE, Sorbonne Universit\'{e}, CNRS/IN2P3, 75005 Paris, France", 
     'freiburg': r'Physikalisches Institut, Universit\"at Freiburg, 79104 Freiburg, Germany',
 #    'lal': r"Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France", 
     'napels': r"Department of Physics ``Ettore Pancini'', University of Napoli and INFN-Napoli, 80126 Napoli, Italy", 
@@ -44,10 +44,11 @@ institutes = {
     'tsinghua': r'Department of Physics \& Center for High Energy Physics, Tsinghua University, Beijing 100084, China', 
     'alsoatferrara': r'INFN, Sez. di Ferrara and Dip. di Fisica e Scienze della Terra, Universit\`a di Ferrara, via G. Saragat 1, Edificio C, I-44122 Ferrara (FE), Italy', 
 #    'alsoatsuny': r'Simons Center for Geometry and Physics and C. N. Yang Institute for Theoretical Physics, SUNY, Stony Brook, NY, USA', 
-    'alsoatutrecht': r'Institute for Subatomic Physics, Utrecht University, Utrecht, Netherlands', 
+#    'alsoatutrecht': r'Institute for Subatomic Physics, Utrecht University, Utrecht, Netherlands', 
 #    'alsoatspacenagoya': r'Institute for Space-Earth Environmental Research, Nagoya University, Nagoya, Aichi 464-8601, Japan', 
     'alsoatcoimbrapoli': r'Coimbra Polytechnic - ISEC, 3030-199 Coimbra, Portugal',
-    'alsoatiarnagoya': r'Institute for Advanced Research, Nagoya University, Nagoya, Aichi 464-8601, Japan'
+    'alsoatiarnagoya': r'Institute for Advanced Research, Nagoya University, Nagoya, Aichi 464-8601, Japan',
+    'alsoatuniheidelberg': r'Physikalisches Institut, Universit\"at Heidelberg, Heidelberg, Germany'
     }
 
 def print_header():
