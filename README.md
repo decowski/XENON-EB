@@ -14,10 +14,12 @@ The author list should be in the following format:<br>
 
 \# NAME: INST1,INST2,ALSOAT    % COMMENT<br>
 \#<br>
-\# INST1, INST2 and ALSOAT have to be defined in make-authorlist.py<br>
+\# INST1, INST2 and ALSOAT have to also be defined, listing the address as<br>
+\# INSTITUTE @ ADDRESS<br>
 \#<br>
 M.~P.~Decowski: nikhef<br>
 S.~Random: heidelberg,wis,alsoatspacenagoya	% left May 2020 random@github.com<br>
+nikhef \@ Nikhef and the University of Amsterdam, Science Park, 1098XG Amsterdam, Netherlands<br> 
 <br>
 <br>
 
